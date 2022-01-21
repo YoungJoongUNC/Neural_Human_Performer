@@ -24,7 +24,7 @@ https://github.com/traveller59/spconv
 
 #### ZJU-Mocap dataset
 
-1. If someone wants to download the ZJU-Mocap dataset, please fill in the [agreement](https://zjueducn-my.sharepoint.com/:b:/g/personal/pengsida_zju_edu_cn/EUPiybrcFeNEhdQROx4-LNEBm4lzLxDwkk1SBcNWFgeplA?e=BGDiQh), and email me (pengsida@zju.edu.cn) and cc Xiaowei Zhou (xwzhou@zju.edu.cn) to request the download link.
+1. To request the ZJU-Mocap dataset download link, please fill in the [agreement](https://zjueducn-my.sharepoint.com/:b:/g/personal/pengsida_zju_edu_cn/EUPiybrcFeNEhdQROx4-LNEBm4lzLxDwkk1SBcNWFgeplA?e=BGDiQh), and email to the original author (pengsida@zju.edu.cn) and cc Xiaowei Zhou (xwzhou@zju.edu.cn).
 2. Create a soft link:
     ```
     ROOT=/path/to/Neural_Human_Performer
