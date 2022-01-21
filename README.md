@@ -1,7 +1,7 @@
 # Neural Human Performer: Learning Generalizable Radiance Fields for Human Performance Rendering
 ### [Project Page](https://youngjoongunc.github.io/nhp/) | [Video](https://www.youtube.com/watch?v=4b5SPwPOKVo) | [Paper](https://arxiv.org/pdf/2109.07448.pdf)
 
-![teaser](https://youngjoongunc.github.io/Neural_Human_Performer/image/teaser.gif)
+![teaser](https://github.com/YoungJoongUNC/Neural_Human_Performer/Neural_Human_Performer/image/teaser.gif)
 
 > [Neural Human Performer: Learning Generalizable Radiance Fields for Human Performance Rendering](https://arxiv.org/pdf/2012.15838.pdf)  
 > Youngjoong Kwon, Dahun Kim, Duygu Ceylan, Henry Fuchs  
