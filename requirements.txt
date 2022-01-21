@@ -1,0 +1,12 @@
+open3d
+PyYAML
+tqdm
+tensorboardX
+termcolor
+scikit-image
+opencv-contrib-python
+opencv-python
+imageio
+trimesh
+plyfile
+PyMCubes
