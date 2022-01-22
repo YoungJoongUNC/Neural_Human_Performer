@@ -16,6 +16,23 @@ Coming very soon !
 Please see [INSTALL.md](INSTALL.md).
 
 
+## Run the code on ZJU-MoCap
+
+Please see [INSTALL.md](INSTALL.md) to download the dataset.
+
+### Visualization on ZJU-MoCap
+1. Download the corresponding pretrained model and put it to `$ROOT/data/trained_model/if_nerf/demo/300.pth`.
+2. Visualization:
+    * Free-viewpoint rendering
+    ```
+    # render frames
+    CUDA_VISIBLE_DEVICES=0 python run.py --type visualize --cfg_file configs/performance.yaml test_mode model_x_motion_x exp_name demo test.epoch 300 gpus "0,"
+    
+    # generate video
+    python gen_video.py 
+    ```
+    <img src="https://github.com/YoungJoongUNC/Neural_Human_Performer/blob/main/image/subject_0_freeview.gif?raw=true" width="60%" height="60%" />
+
 ## Citation
 
 If you find this code useful for your research, please use the following BibTeX entry.
