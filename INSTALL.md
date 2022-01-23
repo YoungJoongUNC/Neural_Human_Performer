@@ -43,6 +43,5 @@ data
    │   ├── SMPL_FEMALE.pkl
    │   └── SMPL_MALE.pkl
    │   └── SMPL_NEUTRAL.pkl
-   ├── J_regressor_body25.npy
-   └── smpl_uv.obj
+   └── J_regressor_body25.npy
 ```
