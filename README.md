@@ -31,7 +31,24 @@ Please see [INSTALL.md](INSTALL.md) to download the dataset.
     # generate video
     python gen_video.py 
     ```
-    <img src="https://github.com/YoungJoongUNC/Neural_Human_Performer/blob/main/image/subject_0_freeview.gif?raw=true" width="30%" height="30%" />
+    <p float="left">  
+      <img src="https://github.com/YoungJoongUNC/Neural_Human_Performer/blob/main/image/subject_0_freeview.gif?raw=true" width="30%" height="30%" />
+    </p>
+
+
+### Training on ZJU-MoCap
+
+
+1. Train:
+    ```
+    # training
+    CUDA_VISIBLE_DEVICES=0 python train_net.py --cfg_file configs/train_or_eval.yaml run_mode train exp_name demo resume False gpus "0,"
+    ```
+
+3. Tensorboard:
+    ```
+    tensorboard --logdir data/record/if_nerf
+    ```   
 
 ## Citation
 
