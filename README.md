@@ -36,7 +36,7 @@ Please see [INSTALL.md](INSTALL.md) to download the dataset.
     CUDA_VISIBLE_DEVICES=0 python run.py --type visualize --cfg_file configs/performance.yaml test_mode model_x_motion_x exp_name demo test.epoch 300 gpus "0,"
     
     # generate video
-    python gen_video.py 
+    python gen_freeview_video.py 
     ```
     <p float="left">  
       <img src="https://github.com/YoungJoongUNC/Neural_Human_Performer/blob/main/image/subject_0_freeview.gif?raw=true" width="30%" height="30%" />

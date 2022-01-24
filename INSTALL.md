@@ -48,8 +48,7 @@ https://github.com/traveller59/spconv
 #### Download SMPL
 1. Go to [SMPL website](https://smpl.is.tue.mpg.de/) and sign up.
 2. Download the SMPL 1.0.0
-3. Donload the J_regressor_body25.npy at [here](https://drive.google.com/file/d/1QDYESaY50sPqWf6oXMA5J8LD-wWXCw9n/view?usp=sharing)
-4. Create a directory with the following structure:
+3. Create a directory with the following structure:
 ```bash
 data
 └── smplx
