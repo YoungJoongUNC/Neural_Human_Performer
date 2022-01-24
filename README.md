@@ -14,11 +14,18 @@ Coming very soon !
 ## Installation
 
 Please see [INSTALL.md](INSTALL.md).
-
+We provide the pretrained models at [here](https://github.com/YoungJoongUNC/Neural_Human_Performer)
 
 ## Run the code on ZJU-MoCap
 
 Please see [INSTALL.md](INSTALL.md) to download the dataset.
+
+### Test on ZJU-MoCap
+1. Download the pretrained model and put it to `$ROOT/data/trained_model/if_nerf/demo/300.pth`.
+2. Test on training human poses:
+    ```
+    python run.py --type evaluate configs/train_or_eval.yaml run_mode test test_mode model_x_motion_x exp_name demo test.epoch 300 gpus "0,"
+    ```
 
 ### Visualization on ZJU-MoCap
 1. Download the corresponding pretrained model and put it to `$ROOT/data/trained_model/if_nerf/demo/300.pth`.
@@ -35,7 +42,16 @@ Please see [INSTALL.md](INSTALL.md) to download the dataset.
       <img src="https://github.com/YoungJoongUNC/Neural_Human_Performer/blob/main/image/subject_0_freeview.gif?raw=true" width="30%" height="30%" />
     </p>
 
-
+    * Mesh recosntruction
+    ```
+    # reconstruct the mesh
+    CUDA_VISIBLE_DEVICES=0 python run.py --type visualize --cfg_file configs/reconstruction.yaml test_mode model_x_motion_x exp_name demo test.epoch 300 gpus "0,"
+    
+    # render mesh
+    # render mesh from 10th frame of 0th human
+    export MESA_GL_VERSION_OVERRIDE=3.3
+    python tools/render_mesh.py --exp_name demo --epoch 300 --exp_folder_name debug  --dataset zju_mocap --human_idx 0 --frame_idx 10
+    ```
 ### Training on ZJU-MoCap
 
 

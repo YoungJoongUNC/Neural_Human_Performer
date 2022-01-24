@@ -12,6 +12,10 @@ https://pytorch.org/get-started/locally/
 # install additional requirements
 pip install -r requirements.txt
 
+# install requirement for mesh rendering
+pip install PyOpenGL PyOpenGL_accelerate
+sudo apt-get install freeglut3-dev
+
 # install spconv
 # Sparse Convolution now provides easy installation via pip
 # Go to the SpConv Github and install the proper version
@@ -31,11 +35,21 @@ https://github.com/traveller59/spconv
     cd $ROOT/data
     ln -s /path/to/zju_mocap zju_mocap
     ```
+
+#### Download visibility maps
+1. Download the visibility maps at [here](https://github.com/YoungJoongUNC/Neural_Human_Performer).
+2. Create a soft link:
+    ```
+    ROOT=/path/to/Neural_Human_Performer
+    cd $ROOT/data
+    ln -s /path/to/zju_rasterization zju_rasterization
+    ```
    
 #### Download SMPL
 1. Go to [SMPL website](https://smpl.is.tue.mpg.de/) and sign up.
 2. Download the SMPL 1.0.0
-3. Create a directory with the following structure:
+3. Donload the J_regressor_body25.npy at [here](https://drive.google.com/file/d/1QDYESaY50sPqWf6oXMA5J8LD-wWXCw9n/view?usp=sharing)
+4. Create a directory with the following structure:
 ```bash
 data
 └── smplx
