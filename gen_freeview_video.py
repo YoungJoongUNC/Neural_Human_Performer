@@ -3,10 +3,9 @@ import numpy as np
 import glob
 import os
 
-path = 'data/perform/demo/-1/debug/0/'
+path = 'data/perform/demo/epoch_-1/debug/0/'
 vid_filename = 'subject_0'
 
-# pad = 6
 files = os.listdir(path)
 files.sort()
 
@@ -14,7 +13,7 @@ speed = 30
 img_array = []
 for idx in range(len(files)):
 
-    img = cv2.imread(path + str(idx) + '.jpg')
+    img = cv2.imread(path + str(idx) + '.png')
     height, width, layers = img.shape
     size = (width, height)
     img_array.append(img)
