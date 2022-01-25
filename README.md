@@ -45,7 +45,9 @@ If you want to train / test on the different subjects, please modify the `lib/da
     python gen_freeview_video.py 
     ```
     <p float="left">  
-      <img src="https://github.com/YoungJoongUNC/Neural_Human_Performer/blob/main/image/subject_0_freeview.gif?raw=true" width="30%" height="30%" />
+      <img src="https://github.com/YoungJoongUNC/Neural_Human_Performer/blob/main/image/freeview_subject_0.gif?raw=true" width="30%" height="30%" />
+      <img src="https://github.com/YoungJoongUNC/Neural_Human_Performer/blob/main/image/freeview_subject_1.gif?raw=true" width="30%" height="30%" />
+      <img src="https://github.com/YoungJoongUNC/Neural_Human_Performer/blob/main/image/freeview_subject_2.gif?raw=true" width="30%" height="30%" />
     </p>
 
     * Mesh recosntruction
