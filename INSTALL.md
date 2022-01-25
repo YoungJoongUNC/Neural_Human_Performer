@@ -35,9 +35,11 @@ https://github.com/traveller59/spconv
     cd $ROOT/data
     ln -s /path/to/zju_mocap zju_mocap
     ```
-
-3. Download the visibility maps at [here](https://drive.google.com/file/d/1I6GpC9BRiJq9IhOCMUE8oZBHcd-pbCfg/view?usp=sharing).
-4. Create a soft link:
+3. Our framework uses the newly fitted SMPL parameters and vertices of the Neural Body.  
+The new parameters are located in `new_params`. You can extract the new vertices by modifying `zju_smpl/extract_vertices.py`.
+Rename the folder containing the new parameters into `params` and the folder containing the new vertices into `vertices`
+4. Download the visibility maps at [here](https://drive.google.com/file/d/1I6GpC9BRiJq9IhOCMUE8oZBHcd-pbCfg/view?usp=sharing).
+5. Create a soft link:
     ```
     ROOT=/path/to/Neural_Human_Performer
     cd $ROOT/data
