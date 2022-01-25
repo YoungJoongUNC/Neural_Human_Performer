@@ -22,8 +22,12 @@ We provide the pretrained models at [here](https://drive.google.com/file/d/1Eyqr
 
 Please see [INSTALL.md](INSTALL.md) to download the dataset.
 
-The provided commands are for the evaluation and visualization on the unseen subjects (subject 387, 393, 394).
-If you want to train / test on the different subjects, please modify the `lib/datasets/get_human_info.py` file.
+The provided commands are for the evaluation and visualization on the unseen subjects (subject 387, 393, 394)
+with three input cameras (Camera B1, B8, B16).
+If you want to train / test on the different subjects, please modify the `lib/datasets/get_human_info.py` file. 
+To make the comparison with our Neural Human Performer easier, 
+we provide the evaluation results (images, summary) at [here](https://drive.google.com/file/d/1ZV300Aukl4LuTy-65qr9Oo3d2TytrcNP/view?usp=sharing). 
+
 
 ### Evaluation on ZJU-MoCap
 1. Download the pretrained model and put it to `$ROOT/data/trained_model/if_nerf/demo/latest.pth`.
