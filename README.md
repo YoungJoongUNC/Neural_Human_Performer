@@ -21,9 +21,12 @@ We provide the pretrained models at [here](https://drive.google.com/file/d/1Eyqr
 
 Please see [INSTALL.md](INSTALL.md) to download the dataset.
 
-### Test on ZJU-MoCap
+The provided commands are for the evaluation and visualization on the unseen subjects (subject 387, 393, 394).
+If you want to train / test on the different subjects, please modify the `lib/datasets/get_human_info.py` file.
+
+### Evaluation on ZJU-MoCap
 1. Download the pretrained model and put it to `$ROOT/data/trained_model/if_nerf/demo/latest.pth`.
-2. Test on training human poses:
+2. Quantitative evaluation:
     ```
     CUDA_VISIBLE_DEVICES=0 python run.py --type evaluate --cfg_file configs/train_or_eval.yaml virt_data_root data/zju_mocap rasterize_root data/zju_rasterization ratio 0.5 H 1024 W 1024 test_input_view "0,7,15" run_mode test test_mode model_x_motion_x exp_name demo resume True test_sample_cam True test.epoch -1 exp_folder_name debug gpus "0,"
     ```
