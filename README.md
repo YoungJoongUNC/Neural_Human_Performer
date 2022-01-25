@@ -24,8 +24,12 @@ Please see [INSTALL.md](INSTALL.md) to download the dataset.
 
 The provided commands are for the evaluation and visualization on the unseen subjects (subject 387, 393, 394)
 with three input cameras (Camera B1, B8, B16).
-If you want to train / test on the different subjects, please modify the `lib/datasets/get_human_info.py` file. 
-To make the comparison with our Neural Human Performer easier, 
+* To train / test on the different subjects, please modify the `lib/datasets/get_human_info.py` file. 
+* To use different input views, please modify the `test_input_view` command argument.
+* To test on the different setting (e.g., test on unseen poses of seen subjects), 
+please modify the `test_mode` command argument accordingly. There are four different settings: 
+`model_o_motion_o` `model_o_motion_x` `model_x_motion_o` `model_x_motion_x`
+* To make the comparison with our Neural Human Performer easier, 
 we provide the evaluation results (images, summary) at [here](https://drive.google.com/file/d/1ZV300Aukl4LuTy-65qr9Oo3d2TytrcNP/view?usp=sharing). 
 
 
