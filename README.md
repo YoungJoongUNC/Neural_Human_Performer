@@ -1,15 +1,16 @@
+**News**
+* `25/01/2022` The code and the pretrained model for the Neural Human Performer are now released!
 # Neural Human Performer: Learning Generalizable Radiance Fields for Human Performance Rendering
 ### [Project Page](https://youngjoongunc.github.io/nhp/) | [Video](https://www.youtube.com/watch?v=4b5SPwPOKVo) | [Paper](https://arxiv.org/pdf/2109.07448.pdf)
 
 
-<img src="https://github.com/YoungJoongUNC/Neural_Human_Performer/blob/main/image/teaser.gif?raw=true" width="50%" height="50%" />
+<img src="https://github.com/YoungJoongUNC/Neural_Human_Performer/blob/main/image/teaser.gif?raw=true" width="70%" height="70%" />
 
 > [Neural Human Performer: Learning Generalizable Radiance Fields for Human Performance Rendering](https://arxiv.org/pdf/2012.15838.pdf)  
 > Youngjoong Kwon, Dahun Kim, Duygu Ceylan, Henry Fuchs  
 > NeurIPS 2021 (Spotlight)
 
-## Code and Instructions
-Coming very soon !
+
 
 ## Installation
 
@@ -21,19 +22,21 @@ We provide the pretrained models at [here](https://github.com/YoungJoongUNC/Neur
 Please see [INSTALL.md](INSTALL.md) to download the dataset.
 
 ### Test on ZJU-MoCap
-1. Download the pretrained model and put it to `$ROOT/data/trained_model/if_nerf/demo/300.pth`.
+1. Download the pretrained model and put it to `$ROOT/data/trained_model/if_nerf/demo/latest.pth`.
 2. Test on training human poses:
     ```
-    python run.py --type evaluate configs/train_or_eval.yaml run_mode test test_mode model_x_motion_x exp_name demo test.epoch 300 gpus "0,"
+    CUDA_VISIBLE_DEVICES=0 python run.py --type evaluate --cfg_file configs/train_or_eval.yaml virt_data_root data/zju_mocap rasterize_root data/zju_rasterization ratio 0.5 H 1024 W 1024 test_input_view "0,7,15" run_mode test test_mode model_x_motion_x exp_name demo resume True test_sample_cam True test.epoch -1 exp_folder_name debug gpus "0,"
     ```
+3. The results (images, summary) will be saved at `$ROOT/data/result/if_nerf/{$exp_name}/epoch_{$test.epoch}/{$exp_folder_name}`
 
 ### Visualization on ZJU-MoCap
-1. Download the corresponding pretrained model and put it to `$ROOT/data/trained_model/if_nerf/demo/300.pth`.
+1. Download the corresponding pretrained model and put it to `$ROOT/data/trained_model/if_nerf/demo/latest.pth`.
 2. Visualization:
     * Free-viewpoint rendering
     ```
     # render frames
-    CUDA_VISIBLE_DEVICES=0 python run.py --type visualize --cfg_file configs/performance.yaml test_mode model_x_motion_x exp_name demo test.epoch 300 gpus "0,"
+    # results will be saved at '$ROOT/data/perform/{$exp_name}/epoch_{$test.epoch}/{$exp_folder_name}'
+    CUDA_VISIBLE_DEVICES=0 python run.py --type visualize --cfg_file configs/performance.yaml virt_data_root data/zju_mocap rasterize_root data/zju_rasterization ratio 0.5 H 1024 W 1024 test_input_view "0,7,15" test_mode model_x_motion_x exp_name demo resume True test.epoch -1 exp_folder_name debug gpus "0,"
     
     # generate video
     python gen_freeview_video.py 
@@ -45,12 +48,13 @@ Please see [INSTALL.md](INSTALL.md) to download the dataset.
     * Mesh recosntruction
     ```
     # reconstruct the mesh
-    CUDA_VISIBLE_DEVICES=0 python run.py --type visualize --cfg_file configs/reconstruction.yaml test_mode model_x_motion_x exp_name demo test.epoch 300 gpus "0,"
+    # results will be saved at '$ROOT/data/mesh/{$exp_name}/epoch_{$test.epoch}/{$exp_folder_name}'
+    CUDA_VISIBLE_DEVICES=0 python run.py --type visualize --cfg_file configs/reconstruction.yaml virt_data_root data/zju_mocap rasterize_root data/zju_rasterization ratio 0.5 H 1024 W 1024 test_input_view "0, 7, 15" test_mode model_x_motion_x exp_name demo resume True test.epoch -1 exp_folder_name debug gpus "1,"
     
     # render mesh
-    # render mesh from 10th frame of 0th human
+    # render mesh from 5th frame of 0th human
     export MESA_GL_VERSION_OVERRIDE=3.3
-    python tools/render_mesh.py --exp_name demo --epoch 300 --exp_folder_name debug  --dataset zju_mocap --human_idx 0 --frame_idx 10
+    python tools/render_mesh.py --exp_name demo --epoch -1 --exp_folder_name debug --dataset zju_mocap --human_idx 0 --frame_idx 5
     ```
 ### Training on ZJU-MoCap
 
@@ -58,7 +62,7 @@ Please see [INSTALL.md](INSTALL.md) to download the dataset.
 1. Train:
     ```
     # training
-    CUDA_VISIBLE_DEVICES=0 python train_net.py --cfg_file configs/train_or_eval.yaml run_mode train exp_name demo resume False gpus "0,"
+    CUDA_VISIBLE_DEVICES=0 python train_net.py --cfg_file configs/train_or_eval.yaml virt_data_root data/zju_mocap rasterize_root data/zju_rasterization ratio 0.5 H 1024 W 1024 run_mode train jitter True exp_name nhp resume True gpus "0,"
     ```
 
 3. Tensorboard:

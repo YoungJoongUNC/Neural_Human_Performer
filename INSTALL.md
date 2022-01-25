@@ -36,15 +36,13 @@ https://github.com/traveller59/spconv
     ln -s /path/to/zju_mocap zju_mocap
     ```
 
-#### Download visibility maps
-1. Download the visibility maps at [here](https://github.com/YoungJoongUNC/Neural_Human_Performer).
-2. Create a soft link:
+3. Download the visibility maps at [here](https://drive.google.com/file/d/1I6GpC9BRiJq9IhOCMUE8oZBHcd-pbCfg/view?usp=sharing).
+4. Create a soft link:
     ```
     ROOT=/path/to/Neural_Human_Performer
     cd $ROOT/data
     ln -s /path/to/zju_rasterization zju_rasterization
     ```
-   
 #### Download SMPL
 1. Go to [SMPL website](https://smpl.is.tue.mpg.de/) and sign up.
 2. Download the SMPL 1.0.0
