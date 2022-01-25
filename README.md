@@ -15,7 +15,7 @@
 ## Installation
 
 Please see [INSTALL.md](INSTALL.md).
-We provide the pretrained models at [here](https://github.com/YoungJoongUNC/Neural_Human_Performer)
+We provide the pretrained models at [here](https://drive.google.com/file/d/1EyqrzHZws_A9ixY3RAxN82WBL1FgypFj/view?usp=sharing)
 
 ## Run the code on ZJU-MoCap
 
