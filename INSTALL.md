@@ -44,6 +44,10 @@ Rename the `new_params` folder into `params` and the `new_vertices` folder into 
     cd $ROOT/data
     ln -s /path/to/zju_rasterization zju_rasterization
     ```
+6. Change the file name format of the subject 313 and 315:
+    ```
+    python lib/utils/modify_313_315_filename.py
+    ```
 #### Download SMPL
 1. Go to [SMPL website](https://smpl.is.tue.mpg.de/) and sign up.
 2. Download the SMPL 1.0.0
